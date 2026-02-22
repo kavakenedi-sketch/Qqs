@@ -1718,7 +1718,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await cmd_createclan(update, context)
     elif lower_text.startswith("клан вступить") or lower_text.startswith("/joinclan"):
         args = text.split(maxsplit=2)
-        if len(args) < 2:
+        if len(args) < 1:
             await update.message.reply_text("Укажите название клана.")
         else:
             context.args = args[2:]
@@ -1734,7 +1734,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if len(args) < 2:
             await update.message.reply_text("Укажите название клана.")
         else:
-            context.args = args[1:]
+            context.args = args[1,2:]
             await cmd_claninfo(update, context)
     elif lower_text.startswith("клан топ") or lower_text.startswith("/clantop"):
         await cmd_clantop(update, context)
