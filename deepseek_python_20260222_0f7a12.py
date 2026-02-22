@@ -1659,10 +1659,10 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await top_week_exp(update, context)
     elif lower_text == "топ месяц опыт":
         await top_month_exp(update, context)
-    elif lower_text == "топ всего опыт":
+    elif lower_text == "топ вся опыт":
         await top_exp(update, context)
     # Существующие команды
-    elif lower_text == "стата вся":
+    elif lower_text == "топ вся":
         await stat_all(update, context)
     elif lower_text == "топ дня":
         await top_day(update, context)
@@ -1672,7 +1672,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await whoami(update, context)
     elif lower_text.startswith("кто ты"):
         await cmd_whois(update, context)
-    elif lower_text.startswith("!админы") or lower_text.startswith("/admins"):
+    elif lower_text.startswith("админы") or lower_text.startswith("/admins"):
         await admins_list(update, context)
     elif lower_text.startswith("!reloadadmin") or lower_text.startswith("/reloadadmin"):
         await sync_admins(update, context)
@@ -1709,34 +1709,34 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         args = text[10:].strip().split()
         context.args = args
         await cmd_unwarn(update, context)
-    elif lower_text.startswith("!создать клан") or lower_text.startswith("/createclan"):
+    elif lower_text.startswith("клан создать") or lower_text.startswith("/createclan"):
         args = text.split(maxsplit=2)
         if len(args) < 2:
             await update.message.reply_text("Укажите название клана.")
         else:
             context.args = args[1:]
             await cmd_createclan(update, context)
-    elif lower_text.startswith("!вступить в клан") or lower_text.startswith("/joinclan"):
+    elif lower_text.startswith("клан вступить") or lower_text.startswith("/joinclan"):
         args = text.split(maxsplit=2)
         if len(args) < 2:
             await update.message.reply_text("Укажите название клана.")
         else:
-            context.args = args[1:]
+            context.args = args[2:]
             await cmd_joinclan(update, context)
-    elif lower_text.startswith("!покинуть клан") or lower_text.startswith("/leaveclan"):
+    elif lower_text.startswith("клан покинуть") or lower_text.startswith("/leaveclan"):
         await cmd_leaveclan(update, context)
-    elif lower_text.startswith("!удалить клан") or lower_text.startswith("/deleteclan"):
+    elif lower_text.startswith("клан удалить") or lower_text.startswith("/deleteclan"):
         await cmd_deleteclan(update, context)
-    elif lower_text.startswith("!мой клан") or lower_text.startswith("/myclan"):
+    elif lower_text.startswith("клан") or lower_text.startswith("/myclan"):
         await cmd_myclan(update, context)
-    elif lower_text.startswith("!инфо клана") or lower_text.startswith("/claninfo"):
+    elif lower_text.startswithwe") or lower_text.startswith("/claninfo"):
         args = text.split(maxsplit=2)
         if len(args) < 2:
             await update.message.reply_text("Укажите название клана.")
         else:
             context.args = args[1:]
             await cmd_claninfo(update, context)
-    elif lower_text.startswith("!топ кланов") or lower_text.startswith("/clantop"):
+    elif lower_text.startswith("клан топ") or lower_text.startswith("/clantop"):
         await cmd_clantop(update, context)
     else:
         await update_stats(update, context)
