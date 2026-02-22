@@ -1729,7 +1729,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await cmd_deleteclan(update, context)
     elif lower_text.startswith("клан") or lower_text.startswith("/myclan"):
         await cmd_myclan(update, context)
-    elif lower_text.startswithwe") or lower_text.startswith("/claninfo"):
+    elif lower_text.startswith("we") or lower_text.startswith("/claninfo"):
         args = text.split(maxsplit=2)
         if len(args) < 2:
             await update.message.reply_text("Укажите название клана.")
