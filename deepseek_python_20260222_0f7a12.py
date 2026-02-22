@@ -8,7 +8,7 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters, C
 from telegram.constants import ChatMemberStatus
 from telegram.error import TelegramError
 
-TOKEN = "8395660188:AAHBTjggX3Nwfx7Xg01uS2cQFb9mgEYM4iY"
+TOKEN = "8395660188:AAG-9ps9W2FZfnDPT9H1dCsn6DbDmvLA2EQ"
 DB_PATH = "stats.db"
 TIMEZONE = pytz.timezone("Europe/Moscow")
 
